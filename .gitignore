@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/MensageriaPontoMultiPonto/bin/Debug/net7.0
+/MensageriaPontoMultiPonto/obj/Debug/net7.0/ref/MensageriaPontoMultiPonto.dll
+/MensageriaPontoMultiPonto/obj/Debug/net7.0/refint/MensageriaPontoMultiPonto.dll
+/MensageriaPontoMultiPonto/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
+/MensageriaPontoMultiPonto/obj/Debug/net7.0
+/MensageriaPontoMultiPonto/obj
