@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MensageriaPontoMultiPonto", "MensageriaPontoMultiPonto\MensageriaPontoMultiPonto.csproj", "{432E912F-DE0D-4706-A79A-72A614F6C737}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MensageriaPontoMultiPonto", "MensageriaPontoMultiPonto.csproj", "{432E912F-DE0D-4706-A79A-72A614F6C737}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
