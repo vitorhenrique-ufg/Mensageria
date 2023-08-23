@@ -22,6 +22,7 @@ namespace MensageriaPontoMultiPonto
 
                 string fila = $"fila_{nomeUsuario}";
                 DeclareTopicoInteresse(canal, fila);
+
                 EventingBasicConsumer consumidor = new(canal);
                 consumidor.Received += (sender, eventArgs) =>
                 {
@@ -53,27 +54,27 @@ namespace MensageriaPontoMultiPonto
 
                     string mensagem = $"{nomeUsuario}: {mensagemDigitada}";
                     byte[] body = Encoding.UTF8.GetBytes(mensagem);
-                    canal.BasicPublish(exchange: "Grupo_WhatsApp", routingKey: string.Empty, basicProperties: null, body: body);
+                    canal.BasicPublish(exchange: "Grupo_WhatsApp", routingKey: string.Empty, basicProperties: default, body: body);
                 }
             }
         }
 
-        static IConnection ObtenhaConexaoRabbitMQ()
+        private static IConnection ObtenhaConexaoRabbitMQ()
         {
-            ConnectionFactory factory = new()
+            ConnectionFactory conexao = new()
             {
                 HostName = "localhost",
                 UserName = "guest",
                 Password = "guest"
             };
-            return factory.CreateConnection();
+            return conexao.CreateConnection();
         }
 
-        static void DeclareTopicoInteresse(IModel canal, string fila)
+        private static void DeclareTopicoInteresse(IModel canal, string fila)
         {
             canal.ExchangeDeclare(exchange: "Grupo_WhatsApp", type: ExchangeType.Topic);
-            canal.QueueDeclare(queue: fila, durable: false, exclusive: false, autoDelete: false, arguments: null);
-            canal.QueueBind(queue: fila, exchange: "Grupo_WhatsApp", routingKey: "");
+            canal.QueueDeclare(queue: fila, durable: false, exclusive: false, autoDelete: false, arguments: default);
+            canal.QueueBind(queue: fila, exchange: "Grupo_WhatsApp", routingKey: string.Empty);
         }
     }
 }
